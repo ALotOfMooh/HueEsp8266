@@ -1,3 +1,12 @@
 page-lights {
+  .bg-style {
+        background-color: black;
+        height: 20px;
+    }
+  .range-style{
+  		width: 100%;
+  		stroke: red;
+  		range-ios-knob-height:20px;
 
+  }
 }

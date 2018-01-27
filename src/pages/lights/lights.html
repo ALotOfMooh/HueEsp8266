@@ -14,18 +14,46 @@
 
 
 <ion-content padding>
-			<button ion-button full (click) ="ON()" >
+			<!--<button ion-button full (click) ="ON()" >
 		 		ON
 			</button>
 			<button ion-button full (click) ="OFF()" >
 		 		OFF
-			</button>
-	<ion-footer no-shadow>
+			</button>-->
+		<ion-list >
+			<!--<ion-list-header>
+      			Brightness
+      			<ion-badge item-end>{{brightness}}</ion-badge>
+    			</ion-list-header>-->
+			<ion-item no-lines>
+				<button item-start ion-fab mini (click) ="TOGGLE()" ><ion-icon name="bulb"></ion-icon></button>
+				<!--<button item-end ion-fab mini color="light" ><ion-icon name="settings"></ion-icon></button>-->
+				<ion-toggle item-end [(ngModel)]="light1_toggle" (click) ="TOGGLE()" > </ion-toggle>
+				<h2 item-start>Bulb1</h2> 			
+			</ion-item>
+			<ion-item no-lines class="bg-style">
+				<ion-range [(ngModel)]="brightness"  min="0" max="255" color="secondary">
+    			</ion-range> 
+    		</ion-item>
+			<ion-item no-lines>
+				<button item-start ion-fab mini ><ion-icon name="bulb"></ion-icon></button>
+				<ion-toggle item-end [(ngModel)]="light2_toggle"> </ion-toggle>	
+				<h2 item-start>Bulb2</h2>  
+			</ion-item> 	
+			<ion-item no-lines class="bg-style">
+				<ion-range  class="range-style" min="0" max="255" color="secondary">
+    			</ion-range>
+			</ion-item>		
+		</ion-list>
+<!--	<ion-footer no-shadow>
 		<ion-toolbar position="bottom">
 			<button ion-button full >
 				<ion-icon name="add-circle"></ion-icon>	
 		 		Add Light
 			</button>
 		</ion-toolbar>
-	</ion-footer>
+	</ion-footer> -->
+	<ion-fab bottom right>
+    	<button ion-fab mini color="danger" ><ion-icon name="add"></ion-icon></button>
+  	</ion-fab>
 </ion-content>
